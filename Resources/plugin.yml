@@ -1,0 +1,4 @@
+name: AntiFake
+description: Prevent FakePlayers from placing specific blocks.
+main: com.kookykraftmc.af.AntiFake
+version: 0.0.1
