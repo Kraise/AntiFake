@@ -17,23 +17,23 @@ public class FPDDetector implements Listener {
     }
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
-        if (isFP(e.getPlayer()) == true) {
-            if (plugin.BBPlace.contains(e.getBlock().getType().toString())) {
+        if (isFP(e.getPlayer())) {
+            if (plugin.BBs.contains(e.getBlock().getType().toString())) {
                 e.setCancelled(true);
             }
         }
     }
 
     public void onBlockBreak(BlockBreakEvent e) {
-        if (isFP(e.getPlayer()) == true) {
-            if (plugin.BBBreak.contains(e.getBlock().getType().toString())) {
+        if (isFP(e.getPlayer())) {
+            if (plugin.BBs.contains(e.getBlock().getType().toString())) {
                 e.setCancelled(true);
             }
         }
     }
     public void onBlockInteract(PlayerInteractEvent e) {
-        if (isFP(e.getPlayer()) == true) {
-            if (plugin.BBInter.contains(e.getClickedBlock().getType().toString())) {
+        if (isFP(e.getPlayer())) {
+            if (plugin.BBs.contains(e.getClickedBlock().getType().toString())) {
                 e.setCancelled(true);
             }
         }
@@ -47,10 +47,6 @@ public class FPDDetector implements Listener {
         }
     }
     void addFP(String name) {
-        if (plugin.FPs.contains(name)) {
-            //already have the fake player so don't need to add him again
-        } else if (!plugin.FPs.contains(name)){
-            plugin.FPs.add(name);
-        }
+        plugin.FPs.add(name);
     }
 }

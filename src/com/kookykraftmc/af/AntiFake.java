@@ -12,9 +12,7 @@ public class AntiFake extends JavaPlugin {
     //list of fake players
     public List<String> FPs;
     //list of badblocks
-    public List<String> BBPlace;
-    public List<String> BBBreak;
-    public List<String> BBInter;
+    public List<String> BBs;
     //plugin description
     PluginDescriptionFile pdf = this.getDescription();
     //plugin prefix
@@ -24,16 +22,13 @@ public class AntiFake extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
         //get list of blocks to prevent
-        BBPlace = this.getConfig().getStringList("badPlace");
-        BBBreak = this.getConfig().getStringList("badBreak");
-        BBInter = this.getConfig().getStringList("badInteract");
+        BBs = this.getConfig().getStringList("badPlace");
         getLogger().info(prefix + " is loading!");
         //register event listener
         getServer().getPluginManager().registerEvents(new FPDDetector(this), this);
     }
     public void onDisable() {
         getLogger().info("Emptying fakeplayer list!");
-        FPs.clear();
+        FPs.removeAll(FPs);
     }
-
 }

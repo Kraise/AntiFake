@@ -1,6 +1,2 @@
-badPlace:
-  - BEDROCK
-badBreak:
-  - BEDROCK
-badInteract:
+badBlocks:
   - BEDROCK
