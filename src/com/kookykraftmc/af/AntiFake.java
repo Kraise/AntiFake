@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class AntiFake extends JavaPlugin {
     //list of fake players
-    public List<String> FPs;
+    public List<String> FPs = new Vector<String>();
     //list of badblocks
     public List<String> BBs;
     //plugin description
